@@ -1,0 +1,9 @@
+C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\bin\Debug\Control Project.dll
+C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\bin\Debug\Control Project.pdb
+C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\obj\Debug\Control Project.csproj.AssemblyReference.cache
+C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\obj\Debug\Control Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\obj\Debug\Control Project.AssemblyInfoInputs.cache
+C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\obj\Debug\Control Project.AssemblyInfo.cs
+C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\obj\Debug\Control Project.csproj.CoreCompileInputs.cache
+C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\obj\Debug\Control Project.dll
+C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\obj\Debug\Control Project.pdb

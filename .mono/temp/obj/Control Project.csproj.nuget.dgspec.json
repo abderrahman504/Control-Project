@@ -1,0 +1,47 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\My files\\Uni Assignments\\CSE Year 2 term 2\\Control\\Control Project\\Control Project.csproj": {}
+  },
+  "projects": {
+    "C:\\My files\\Uni Assignments\\CSE Year 2 term 2\\Control\\Control Project\\Control Project.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\My files\\Uni Assignments\\CSE Year 2 term 2\\Control\\Control Project\\Control Project.csproj",
+        "projectName": "Control Project",
+        "projectPath": "C:\\My files\\Uni Assignments\\CSE Year 2 term 2\\Control\\Control Project\\Control Project.csproj",
+        "packagesPath": "C:\\Users\\Abdelrahman\\.nuget\\packages\\",
+        "outputPath": "C:\\My files\\Uni Assignments\\CSE Year 2 term 2\\Control\\Control Project\\.mono\\temp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Abdelrahman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
