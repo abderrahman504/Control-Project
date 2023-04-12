@@ -22,7 +22,7 @@ func _gui_input(event):
 
 func update_edges() -> void:
 	for edge in inputs:
-		edge.line.set_point_position(1, rect_position)
+		edge.update_pos()
 	for edge in outputs:
-		edge.line.set_point_position(0, rect_position)
+		edge.update_pos()
 	

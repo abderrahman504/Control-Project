@@ -87,6 +87,10 @@ func create_edge(to: VarNode) -> void:
 	var edge = load(Constants.directedEdgePath).instance()
 	add_child(edge)
 	edge.connect_edge(heldNode, to)
+	edge.id = edgeIDCounter
+	edges[edgeIDCounter] = edge
+	edgeIDCounter += 1
+	
 
 #Called when dragging ends before the edge was connected to 2 nodes
 func stop_dragging_edge() -> void:
@@ -97,13 +101,15 @@ func stop_dragging_edge() -> void:
 func update_edges_at(node: VarNode):
 	node.update_edges()
 
-#
-#func can_drop_data(position: Vector2, data) -> bool:
-#	return data is VarNode and state == NodeEdit
-#
-#
-#func drop_data(position: Vector2, data: VarNode) -> void:
-#	data.set_position(position - 0.5*data.rect_size)
 
+func clear_canvas():
+	for node in nodes.values():
+		node.queue_free()
+	for edge in edges.values():
+		edge.queue_free()
+	nodes = {}
+	edges = {}
+	nodeIDCounter = 0
+	edgeIDCounter = 0
 
 

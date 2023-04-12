@@ -32,7 +32,7 @@ margin_top = 7.0
 margin_right = 761.0
 margin_bottom = 47.0
 mouse_filter = 2
-custom_constants/separation = 50
+custom_constants/separation = 20
 
 [node name="Node" type="Button" parent="TopPanel/HBoxContainer"]
 margin_right = 46.0
@@ -40,10 +40,17 @@ margin_bottom = 40.0
 text = "Node"
 
 [node name="Line" type="Button" parent="TopPanel/HBoxContainer"]
-margin_left = 96.0
-margin_right = 135.0
+margin_left = 66.0
+margin_right = 105.0
 margin_bottom = 40.0
 text = "Line"
 
+[node name="Clear" type="Button" parent="TopPanel/HBoxContainer"]
+margin_left = 125.0
+margin_right = 217.0
+margin_bottom = 40.0
+text = "Clear Canvas"
+
 [connection signal="button_up" from="TopPanel/HBoxContainer/Node" to="." method="_on_Node_button_up"]
 [connection signal="button_up" from="TopPanel/HBoxContainer/Line" to="." method="_on_Line_button_up"]
+[connection signal="button_up" from="TopPanel/HBoxContainer/Clear" to="." method="_on_Clear_button_up"]
