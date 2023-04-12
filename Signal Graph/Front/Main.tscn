@@ -51,6 +51,13 @@ margin_right = 217.0
 margin_bottom = 40.0
 text = "Clear Canvas"
 
+[node name="Label" type="Label" parent="TopPanel/HBoxContainer"]
+margin_left = 237.0
+margin_top = 13.0
+margin_right = 307.0
+margin_bottom = 27.0
+text = "Add Nodes"
+
 [connection signal="button_up" from="TopPanel/HBoxContainer/Node" to="." method="_on_Node_button_up"]
 [connection signal="button_up" from="TopPanel/HBoxContainer/Line" to="." method="_on_Line_button_up"]
 [connection signal="button_up" from="TopPanel/HBoxContainer/Clear" to="." method="_on_Clear_button_up"]

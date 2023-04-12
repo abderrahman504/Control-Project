@@ -48,8 +48,10 @@ func create_node_at(pos: Vector2) -> void:
 	var actualPos: Vector2 = pos - 0.5*node.rect_size
 	node.rect_global_position = actualPos
 	node.connect("clicked", self, "on_node_clicked")
+	node.connect("deleted", self, "on_node_deleted")
 	nodes[nodeIDCounter] = node
 	node.id = nodeIDCounter
+	node.label.text = "x" + str(node.id+1)
 	nodeIDCounter += 1
 
 
@@ -62,7 +64,7 @@ func on_node_clicked(node: VarNode, event: InputEventMouseButton) -> void:
 			elif Input.is_action_just_released("LMB"):
 				draggingNode = false
 			elif Input.is_action_just_released("RMB"): 
-				node.queue_free()
+				node.delete()
 		EdgeEdit:
 			if not draggingEdge and Input.is_action_just_pressed("LMB"):
 				start_dragging_edge(node)
@@ -86,11 +88,12 @@ func create_edge(to: VarNode) -> void:
 	if to == heldNode: return
 	var edge = load(Constants.directedEdgePath).instance()
 	add_child(edge)
-	edge.connect_edge(heldNode, to)
 	edge.id = edgeIDCounter
+	edge.connect_edge(heldNode, to)
 	edges[edgeIDCounter] = edge
 	edgeIDCounter += 1
-	
+	edge.connect("deleted", self, "on_edge_deleted")
+
 
 #Called when dragging ends before the edge was connected to 2 nodes
 func stop_dragging_edge() -> void:
@@ -113,3 +116,8 @@ func clear_canvas():
 	edgeIDCounter = 0
 
 
+func on_node_deleted(id: int):
+	nodes.erase(id)
+
+func on_edge_deleted(id: int):
+	edges.erase(id)

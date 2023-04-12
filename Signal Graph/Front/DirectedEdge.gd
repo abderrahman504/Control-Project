@@ -1,5 +1,6 @@
 extends Node2D
 class_name DirectedEdge
+signal deleted
 
 var id: int
 onready var line: Line2D = $Edge
@@ -11,8 +12,8 @@ var to: VarNode
 func connect_edge(from: VarNode, to: VarNode):
 	self.from = from
 	self.to = to
-	from.outputs.append(self)
-	to.inputs.append(self)
+	from.outputs[id] = self
+	to.inputs[id] = self
 	line.clear_points()
 	line.add_point(from.rect_position + 0.5*from.rect_size)
 	line.add_point(to.rect_position + 0.5*from.rect_size)
@@ -35,3 +36,14 @@ func update_pos():
 	arrow.set_point_position(0, p1)
 	arrow.set_point_position(1, p2)
 	arrow.set_point_position(2, p3)
+
+
+func delete():
+	to.inputs.erase(id)
+	from.outputs.erase(id)
+	queue_free()
+	emit_signal("deleted", id)
+
+
+
+

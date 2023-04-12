@@ -1,18 +1,12 @@
 extends TextureRect
 class_name VarNode
 signal clicked
+signal deleted
 
 var id: int
-var inputs: Array = []
-var outputs: Array = []
-
-#
-#func get_drag_data(position) -> VarNode:
-#	var preview: VarNode = load(Constants.varNodePath).instance()
-#	preview.modulate = Color(1,1,1,0.25)
-#	set_drag_preview(preview);
-#
-#	return self
+onready var label: Label = $Label
+var inputs: Dictionary = {}
+var outputs: Dictionary = {}
 
 
 func _gui_input(event):
@@ -21,8 +15,17 @@ func _gui_input(event):
 
 
 func update_edges() -> void:
-	for edge in inputs:
+	for edge in inputs.values():
 		edge.update_pos()
-	for edge in outputs:
+	for edge in outputs.values():
 		edge.update_pos()
 	
+
+
+func delete():
+	for edge in inputs.values():
+		edge.delete()
+	for edge in outputs.values():
+		edge.delete()
+	queue_free()
+	emit_signal("deleted", id)
