@@ -21,7 +21,7 @@ var heldNode: VarNode
 func _ready():
 	state = NodeEdit
 
-func _process(delta):
+func _process(_delta):
 	if draggingNode:
 		heldNode.set_position(get_local_mouse_position() - 0.5*heldNode.rect_size)
 		update_edges_at(heldNode)
@@ -55,7 +55,7 @@ func create_node_at(pos: Vector2) -> void:
 	nodeIDCounter += 1
 
 
-func on_node_clicked(node: VarNode, event: InputEventMouseButton) -> void:
+func on_node_clicked(node: VarNode, _event: InputEventMouseButton) -> void:
 	match state:
 		NodeEdit:
 			if Input.is_action_just_pressed("LMB"):

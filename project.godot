@@ -34,6 +34,11 @@ config/icon="res://icon.png"
 
 Constants="*res://Singletons/Constants.gd"
 
+[debug]
+
+gdscript/warnings/shadowed_variable=false
+gdscript/warnings/return_value_discarded=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

@@ -2,7 +2,8 @@ extends Control
 
 
 
-
+func _ready():
+	$WindowDialog.popup()
 
 
 func _on_Node_button_up():

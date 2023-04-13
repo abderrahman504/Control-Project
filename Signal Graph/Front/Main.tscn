@@ -58,6 +58,34 @@ margin_right = 307.0
 margin_bottom = 27.0
 text = "Add Nodes"
 
+[node name="WindowDialog" type="WindowDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -169.0
+margin_top = -104.0
+margin_right = 157.0
+margin_bottom = 135.0
+window_title = "How to use"
+
+[node name="Label" type="Label" parent="WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Buttons:
+1. Node: Enter add Nodes mode
+2. Line: Enter add Edges mode
+3. Clear Canvas: Delete all nodes and edges
+
+Modes:
+1.Add Nodes: Left click to add a node. Hold left on a node to drag it around. right click a node to delete it.
+2.Add Edges:click on a node to draw an edge from it. If click on another node you will create an edge to it. If you click anywhere else you will stop drawing an edge."
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
 [connection signal="button_up" from="TopPanel/HBoxContainer/Node" to="." method="_on_Node_button_up"]
 [connection signal="button_up" from="TopPanel/HBoxContainer/Line" to="." method="_on_Line_button_up"]
 [connection signal="button_up" from="TopPanel/HBoxContainer/Clear" to="." method="_on_Clear_button_up"]
