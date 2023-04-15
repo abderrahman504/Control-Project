@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Signal Graph/Front/VarNode.gd" type="Script" id=1]
 [ext_resource path="res://Signal Graph/Front/VarNode.png" type="Texture" id=2]
+[ext_resource path="res://Shaders/VarNode.gdshader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/highlightEdge = false
+shader_param/hlColor = Vector3( 0.259, 0.356, 0.764 )
 
 [node name="TextureRect" type="TextureRect"]
+material = SubResource( 1 )
 margin_right = 34.0
 margin_bottom = 34.0
 mouse_filter = 0
@@ -22,3 +30,6 @@ anchor_bottom = 1.0
 text = "C"
 align = 1
 valign = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_TextureRect_mouse_exited"]

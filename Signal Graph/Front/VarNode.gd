@@ -29,3 +29,11 @@ func delete():
 		edge.delete()
 	queue_free()
 	emit_signal("deleted", id)
+
+
+func _on_TextureRect_mouse_entered():
+	material.set_shader_param("highlightEdge", true)
+
+
+func _on_TextureRect_mouse_exited():
+	material.set_shader_param("highlightEdge", false)

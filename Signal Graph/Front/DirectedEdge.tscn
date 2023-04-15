@@ -24,10 +24,10 @@ antialiased = true
 [node name="Gain" type="LineEdit" parent="."]
 margin_left = 204.0
 margin_top = 85.0
-margin_right = 269.0
+margin_right = 262.0
 margin_bottom = 109.0
 align = 1
 expand_to_text_length = true
-placeholder_text = "Set Gain"
+placeholder_text = "Gain"
 placeholder_alpha = 0.426
 caret_blink = true
