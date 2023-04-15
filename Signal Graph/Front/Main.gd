@@ -1,6 +1,7 @@
 extends Control
 
 var missingInOut := "Input and output nodes not set!"
+var invalidGain := "Some gains can't be interpreted as numbers!"
 
 
 
@@ -44,15 +45,28 @@ func _on_Evaluate_button_up():
 	if $Canvas.input == null or $Canvas.output == null:
 		show_error(missingInOut)
 		return
+	for edge in $Canvas.edges.values():
+		if not edge.get_node("Gain").text.is_valid_float():
+			show_error(invalidGain)
+			return
+	var evaluator = load(Constants.evaluatorPath).new()
+	evaluator.Initialize(prep_graph(), $Canvas.input.id, $Canvas.output.id)
 	
 
 func prep_graph() -> Dictionary:
-	
-	return {}
+	var graph := {}
+	for node in $Canvas.nodes.values():
+		graph[node.id] = []
+		for edge in node.outputs.values():
+			graph[node.id].append([edge.get_gain(), edge.to.id])
 
+	return graph
 
-
-
-
-
-
+# Graph in dict form:
+# {
+# 	1: [[gain, dest_node], [gain, dest_node], [gain, dest_node]]  
+# 	2: ...
+# 	3: ...
+# 	4: ...
+# 
+# }
