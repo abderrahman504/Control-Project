@@ -4,8 +4,18 @@ using System;
 public class Evaluator : Reference
 {
     
-	public void Initialize(Godot.Collections.Dictionary graph, int inID, int outID)
+//  Graph in dict form:
+//  {
+//  	x1: [[gain, dest_node.name], [gain, dest_node.name], [gain, dest_node.name]]  
+//  	x2: ...
+//  	x3: ...
+//  	x4: ...
+//  	R: ...
+//  	C: ...
+//  }
+	public void Initialize(Godot.Collections.Dictionary graphDict)
 	{
-		GD.Print("Evaluator initialized successfully.");
+		Graph graph = new Graph();
+		graph.build_graph(graphDict);
 	}
 }

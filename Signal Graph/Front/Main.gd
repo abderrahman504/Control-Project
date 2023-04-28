@@ -50,23 +50,24 @@ func _on_Evaluate_button_up():
 			show_error(invalidGain)
 			return
 	var evaluator = load(Constants.evaluatorPath).new()
-	evaluator.Initialize(prep_graph(), $Canvas.input.id, $Canvas.output.id)
+	evaluator.Initialize(prep_graph())
 	
 
 func prep_graph() -> Dictionary:
 	var graph := {}
 	for node in $Canvas.nodes.values():
-		graph[node.id] = []
+		graph[node.label.text] = []
 		for edge in node.outputs.values():
-			graph[node.id].append([edge.get_gain(), edge.to.id])
+			graph[node.label.text].append([edge.get_gain(), edge.to.label.text])
 
 	return graph
 
 # Graph in dict form:
 # {
-# 	1: [[gain, dest_node], [gain, dest_node], [gain, dest_node]]  
-# 	2: ...
-# 	3: ...
-# 	4: ...
-# 
+# 	x1: [[gain, dest_node.name], [gain, dest_node.name], [gain, dest_node.name]]  
+# 	x2: ...
+# 	x3: ...
+# 	x4: ...
+# 	R: ...
+# 	C: ...
 # }

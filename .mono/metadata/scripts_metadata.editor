@@ -1,1 +1,1 @@
-{"res://Signal Graph/Evaluator/Evaluator.cs":{"modified_time":"1681528594","class":{"namespace":"","class_name":"Evaluator","nested":false}}}
+{"res://Signal Graph/Evaluator/Evaluator.cs":{"modified_time":"1682712292","class":{"namespace":"","class_name":"Evaluator","nested":false}},"res://Signal Graph/Evaluator/VNode.cs":{"modified_time":"1682711150","class":{"namespace":"","class_name":"VNode","nested":false}},"res://Signal Graph/Evaluator/DestWeightPair.cs":{"modified_time":"1682713575","class":{"namespace":"","class_name":"DestWeightPair","nested":false}}}
