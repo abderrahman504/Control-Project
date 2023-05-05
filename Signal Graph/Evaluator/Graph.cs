@@ -1,5 +1,5 @@
-using Godot;
 using System;
+using Godot;
 using System.Collections.Generic;
 
 public class Graph
@@ -27,7 +27,7 @@ public class Graph
 			}
 			nodes.Add(name, new VNode(name, adjs));
 		}
-		int debug = 10;
+		//int debug = 10;
 	}
 
 }

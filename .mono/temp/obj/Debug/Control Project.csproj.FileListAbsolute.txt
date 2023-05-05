@@ -7,3 +7,12 @@ C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp
 C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\obj\Debug\Control Project.csproj.CoreCompileInputs.cache
 C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\obj\Debug\Control Project.dll
 C:\My files\Uni Assignments\CSE Year 2 term 2\Control\Control Project\.mono\temp\obj\Debug\Control Project.pdb
+D:\Freelancer\Projects\Current\Control-Project\.mono\temp\bin\Debug\Control Project.dll
+D:\Freelancer\Projects\Current\Control-Project\.mono\temp\bin\Debug\Control Project.pdb
+D:\Freelancer\Projects\Current\Control-Project\.mono\temp\obj\Debug\Control Project.csproj.AssemblyReference.cache
+D:\Freelancer\Projects\Current\Control-Project\.mono\temp\obj\Debug\Control Project.GeneratedMSBuildEditorConfig.editorconfig
+D:\Freelancer\Projects\Current\Control-Project\.mono\temp\obj\Debug\Control Project.AssemblyInfoInputs.cache
+D:\Freelancer\Projects\Current\Control-Project\.mono\temp\obj\Debug\Control Project.AssemblyInfo.cs
+D:\Freelancer\Projects\Current\Control-Project\.mono\temp\obj\Debug\Control Project.csproj.CoreCompileInputs.cache
+D:\Freelancer\Projects\Current\Control-Project\.mono\temp\obj\Debug\Control Project.dll
+D:\Freelancer\Projects\Current\Control-Project\.mono\temp\obj\Debug\Control Project.pdb
