@@ -19,11 +19,13 @@ mouse_filter = 1
 script = ExtResource( 2 )
 
 [node name="Canvas" type="TextureRect" parent="."]
-anchor_top = 0.105
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -26.0
+margin_top = 51.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TopPanel" type="PanelContainer" parent="."]
 anchor_right = 1.0
@@ -86,27 +88,34 @@ margin_bottom = 40.0
 text = "Evaluate Graph"
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -169.0
-margin_top = -104.0
-margin_right = 157.0
-margin_bottom = 135.0
+margin_left = -161.0
+margin_top = -186.0
+margin_right = 165.0
+margin_bottom = 128.0
 window_title = "How to use"
 
 [node name="Label" type="Label" parent="WindowDialog"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 7.0
 text = "Buttons:
 1. Node: Enter add Nodes mode
 2. Line: Enter add Edges mode
 3. Clear Canvas: Delete all nodes and edges
+4. Input: Set the input node
+5. Output: Set the output node
+6. Evaluate Graph: Calculated the transfer function
 
 Modes:
 1. Add Nodes: Left click to add a node. Hold left on a node to drag it around. right click a node to delete it.
-2. Add Edges:click on a node to draw an edge from it. If click on another node you will create an edge to it. If you click anywhere else you will stop drawing an edge."
+2. Add Edges: click on a node to draw an edge from it. If click on another node you will create an edge to it. If you click anywhere else you will stop drawing an edge.
+3. Input: Left click a node to set as input
+4. Output: Left click a node to set as putput"
 autowrap = true
 __meta__ = {
 "_edit_lock_": true
@@ -124,7 +133,6 @@ theme = SubResource( 2 )
 alignment = 2
 
 [node name="SolutionWindow" type="WindowDialog" parent="."]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
