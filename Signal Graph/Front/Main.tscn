@@ -86,7 +86,6 @@ margin_bottom = 40.0
 text = "Evaluate Graph"
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -123,6 +122,23 @@ margin_right = 180.0
 margin_bottom = -4.0
 theme = SubResource( 2 )
 alignment = 2
+
+[node name="SolutionWindow" type="WindowDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -151.0
+margin_top = -101.0
+margin_right = 162.0
+margin_bottom = 131.0
+
+[node name="SolLabel" type="Label" parent="SolutionWindow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+align = 1
+valign = 1
 
 [connection signal="button_up" from="TopPanel/HBoxContainer/Node" to="." method="_on_Node_button_up"]
 [connection signal="button_up" from="TopPanel/HBoxContainer/Line" to="." method="_on_Line_button_up"]

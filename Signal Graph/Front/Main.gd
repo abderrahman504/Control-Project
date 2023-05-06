@@ -50,7 +50,7 @@ func _on_Evaluate_button_up():
 			show_error(invalidGain)
 			return
 	var evaluator = load(Constants.evaluatorPath).new()
-	evaluator.Initialize(prep_graph())
+	evaluator.Initialize(prep_graph(), $SolutionWindow)
 	
 
 func prep_graph() -> Dictionary:

@@ -16,11 +16,13 @@ public class Evaluator : Reference
 //  	R: ...
 //  	C: ...
 //  }
-	public void Initialize(Godot.Collections.Dictionary graphDict)
+	public void Initialize(Godot.Collections.Dictionary graphDict, WindowDialog solWindow)
 	{
 		var paths = FindAllPaths(graphDict);
 		var loops = FindAllLoops(graphDict);
 		int solution = Mason(graphDict, paths, loops);
+		solWindow.Popup_();
+		solWindow.GetNode<Label>("SolLabel").Text = "Transfer Function = " + solution;
 	}
 	
 
