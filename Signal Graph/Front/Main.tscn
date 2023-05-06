@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Signal Graph/Front/Canvas.gd" type="Script" id=1]
 [ext_resource path="res://Signal Graph/Front/Main.gd" type="Script" id=2]
 [ext_resource path="res://kenvector_future.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://images/background.jpg" type="Texture" id=4]
+
+[sub_resource type="Theme" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0, 0, 0, 1 )
@@ -15,8 +18,18 @@ Label/fonts/font = SubResource( 1 )
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 31.0
+margin_top = -37.0
+margin_right = 31.0
+margin_bottom = -37.0
 mouse_filter = 1
+theme = SubResource( 3 )
 script = ExtResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 473, 336 )
+scale = Vector2( 0.908889, 0.908889 )
+texture = ExtResource( 4 )
 
 [node name="Canvas" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -29,9 +42,10 @@ __meta__ = {
 
 [node name="TopPanel" type="PanelContainer" parent="."]
 anchor_right = 1.0
-margin_left = 128.0
-margin_right = -128.0
-margin_bottom = 54.0
+margin_left = 200.0
+margin_top = 45.0
+margin_right = -233.0
+margin_bottom = 99.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -40,7 +54,7 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="TopPanel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 761.0
+margin_right = 584.0
 margin_bottom = 47.0
 mouse_filter = 2
 custom_constants/separation = 20
@@ -94,9 +108,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -161.0
-margin_top = -186.0
+margin_top = -120.0
 margin_right = 165.0
-margin_bottom = 128.0
+margin_bottom = 194.0
 window_title = "How to use"
 
 [node name="Label" type="Label" parent="WindowDialog"]
@@ -137,16 +151,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -151.0
-margin_top = -101.0
-margin_right = 162.0
-margin_bottom = 131.0
+margin_left = -212.0
+margin_top = -120.0
+margin_right = 188.0
+margin_bottom = 230.0
+window_title = "Solution"
 
-[node name="SolLabel" type="Label" parent="SolutionWindow"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-align = 1
-valign = 1
+[node name="SolutionBox" type="TextEdit" parent="SolutionWindow"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 390.0
+margin_bottom = 340.0
+text = "
+"
+readonly = true
+bookmark_gutter = true
 
 [connection signal="button_up" from="TopPanel/HBoxContainer/Node" to="." method="_on_Node_button_up"]
 [connection signal="button_up" from="TopPanel/HBoxContainer/Line" to="." method="_on_Line_button_up"]

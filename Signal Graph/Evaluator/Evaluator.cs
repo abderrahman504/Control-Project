@@ -20,9 +20,7 @@ public class Evaluator : Reference
 	{
 		var paths = FindAllPaths(graphDict);
 		var loops = FindAllLoops(graphDict);
-		int solution = Mason(graphDict, paths, loops);
-		solWindow.Popup_();
-		solWindow.GetNode<Label>("SolLabel").Text = "Transfer Function = " + solution;
+		double solution = Mason(graphDict, paths, loops, solWindow);
 	}
 	
 
@@ -121,11 +119,34 @@ public class Evaluator : Reference
 		return PathGain;
 	}
 	
-	public int Mason(Godot.Collections.Dictionary graphDict, List<List<string>> paths, List<List<string>> loops){
+	public double Mason(Godot.Collections.Dictionary graphDict, List<List<string>> paths, List<List<string>> loops, WindowDialog solWindow){
 		int K = paths.Count;
 		int sum = 0; // Σk (Tk . Δk)
+
+		string SolutionText = "";
+		int index = 0;
+		SolutionText += "> Forward Paths:\n";
+		foreach (List<string> path in paths){
+			index += 1;
+			SolutionText += index + ") ";
+			foreach (string node in path){
+				SolutionText += node + " ";
+			}
+			SolutionText += "[Gains: "+ getPathGain(graphDict, path) +"]\n";
+		}
 		
-		GD.Print("Total Paths (K): ", K);
+		SolutionText += "\n> Individual Loops:\n";
+		index = 0;
+		foreach (List<string> loop in loops){
+			index += 1;
+			SolutionText += index + ") ";
+			foreach (string node in loop){
+				SolutionText += node + " ";
+			}
+			SolutionText += "[Gains: "+ getPathGain(graphDict, loop) +"]\n";
+		}
+		if (index == 0) SolutionText += "None\n";
+		SolutionText += "\n";
 		
 		for (int i=0; i<K; i++){
 			int T = getPathGain(graphDict, paths[i]);
@@ -136,40 +157,59 @@ public class Evaluator : Reference
 				}
 			}
 			
-			GD.Print("T: ", T);
-			GD.Print("Δk: ", 1-NonTouchingLoops_TotalGain);
+			SolutionText += "K["+(i+1).ToString()+"]: (d = " + (1-NonTouchingLoops_TotalGain).ToString() + ") (T = " + T + ")\n";
 			sum += T * (1-NonTouchingLoops_TotalGain);
 		}
+		SolutionText += "\n";
 		
 		int Loops_TotalGain = 0;
 		foreach (List<string> loop in loops){
-			Loops_TotalGain = getPathGain(graphDict, loop);
+			Loops_TotalGain += getPathGain(graphDict, loop);
 		}
 		
 		int delta = 1 - Loops_TotalGain;
 		int sign = 1;
 		
-		for (int i=2; i<loops.Count; i++){
+		for (int i=2; i<=loops.Count; i++){
+			string NonTouchingLoops = "";
+			int TotalGain = 0;
+			int TotalLoops = 0;
+			index = 0;
 			for (int j=0; j<loops.Count; j++){
-				int TotalGain = 0;
-				int TotalLoops = 0;
 				foreach (List<string> loop in loops){
 					if (!isTouchingLoop(loop, loops[j])) {
 						TotalLoops += 1;
-						TotalGain += getPathGain(graphDict, loop);
+						TotalGain *= getPathGain(graphDict, loop);
+						if (NonTouchingLoops != "") NonTouchingLoops += " | ";
+						else {
+							index += 1;
+							NonTouchingLoops += index + ") ";
+						}
+						foreach (string node in loop){
+							NonTouchingLoops += node + " ";
+						}
 						if (TotalLoops == i) break;
 					}
-				} 
+				}
 				if (TotalLoops == i){
 					delta += sign * TotalGain;
 					sign *= -1;
+					SolutionText += "> Non Touching Loops (Taking "+i+" at time):\n";
+					SolutionText += NonTouchingLoops + "[Gains: "+TotalGain+"]";
 				}
 			}
 		}
+		SolutionText += "\n";
 		
-		GD.Print("Δ: ", delta);
-		int solution = sum / delta;
-		GD.Print("Final Solution: ", solution);
+		double solution = sum / delta;
+		
+		// Solution Window
+		
+		SolutionText += "\n> Transfer Function = " + solution + " | SUM: " + sum + " | delta: " + delta;
+		
+		solWindow.Popup_();
+		solWindow.GetNode<TextEdit>("SolutionBox").Text = SolutionText;
+		
 		return solution;
 	}
 }

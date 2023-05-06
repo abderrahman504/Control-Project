@@ -6,6 +6,7 @@ var invalidGain := "Some gains can't be interpreted as numbers!"
 
 
 func _ready():
+	OS.set_window_title("Signal Flow Graph Solver");
 	$WindowDialog.popup()
 	$Canvas.connect("line_from_output", self, "show_error")
 	$Canvas.connect("line_to_input", self, "show_error")
