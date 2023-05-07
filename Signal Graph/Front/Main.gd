@@ -11,29 +11,38 @@ func _ready():
 	$Canvas.connect("line_from_output", self, "show_error")
 	$Canvas.connect("line_to_input", self, "show_error")
 
+func _process(delta):
+	if $AudioStreamPlayer.playing == false:
+		$AudioStreamPlayer.play()
+	pass
 
 func _on_Node_button_up():
 	$Canvas.state = $Canvas.NodeEdit
 	$TopPanel/HBoxContainer/Label.text = "Add Nodes"
+	$SoundAddNode.play()
 
 
 func _on_Line_button_up():
 	$Canvas.state = $Canvas.EdgeEdit
 	$TopPanel/HBoxContainer/Label.text = "Add Edges"
+	$SoundAddNode.play()
 
 
 func _on_Clear_button_up():
 	$Canvas.clear_canvas()
+	$SoundAddNode.play()
 
 
 func _on_SetInput_button_up():
 	$Canvas.state = $Canvas.ChooseIn
 	$TopPanel/HBoxContainer/Label.text = "Choose Input"
+	$SoundAddNode.play()
 
 
 func _on_SetOutput_button_up():
 	$Canvas.state = $Canvas.ChooseOut
 	$TopPanel/HBoxContainer/Label.text = "Choose Output"
+	$SoundAddNode.play()
 
 
 func show_error(msg: String):
@@ -43,6 +52,7 @@ func show_error(msg: String):
 
 
 func _on_Evaluate_button_up():
+	$SoundEvaluate.play()
 	if $Canvas.input == null or $Canvas.output == null:
 		show_error(missingInOut)
 		return

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Assassins Creed Origins Main Theme.mp3-e9ceeb334e2135b6dbec042406ab794e.mp3str"
+
+[deps]
+
+source_file="res://sound/Assassins Creed Origins Main Theme.mp3"
+dest_files=[ "res://.import/Assassins Creed Origins Main Theme.mp3-e9ceeb334e2135b6dbec042406ab794e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -205,7 +205,7 @@ public class Evaluator : Reference
 		
 		// Solution Window
 		
-		SolutionText += "\n> Transfer Function = " + solution + " | SUM: " + sum + " | delta: " + delta;
+		SolutionText += "\n> Transfer Function = " + String.Format("{0:0.00}", solution) + " | SUM: " + sum + " | delta: " + delta;
 		
 		solWindow.Popup_();
 		solWindow.GetNode<TextEdit>("SolutionBox").Text = SolutionText;

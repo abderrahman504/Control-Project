@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Assassin's Creed Origins Senu - Output [Sound Effect].mp3-ae9f918febe1bf0684dc22ee0b77030f.mp3str"
+
+[deps]
+
+source_file="res://sound/Assassin's Creed Origins Senu - Output [Sound Effect].mp3"
+dest_files=[ "res://.import/Assassin's Creed Origins Senu - Output [Sound Effect].mp3-ae9f918febe1bf0684dc22ee0b77030f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
