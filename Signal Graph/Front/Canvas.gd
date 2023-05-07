@@ -53,7 +53,6 @@ func create_node_at(pos: Vector2) -> void:
 	var actualPos: Vector2 = pos - 0.5*node.rect_size
 	node.rect_global_position = actualPos
 	node.connect("clicked", self, "on_node_clicked")
-	node.connect("deleted", self, "on_node_deleted")
 	nodes[nodeIDCounter] = node
 	node.id = nodeIDCounter
 	node.label.text = "x" + str(node.id)
@@ -69,7 +68,7 @@ func on_node_clicked(node: VarNode, _event: InputEventMouseButton) -> void:
 			elif Input.is_action_just_released("LMB"):
 				draggingNode = false
 			elif Input.is_action_just_released("RMB"): 
-				node.delete()
+				delete_node(node)
 		EdgeEdit:
 			if not draggingEdge and Input.is_action_just_pressed("LMB"):
 				if (node == output):
@@ -159,3 +158,10 @@ func on_node_deleted(id: int):
 
 func on_edge_deleted(id: int):
 	edges.erase(id)
+
+
+func delete_node(node: VarNode):
+	if input != null and input.id == node.id: input = null
+	if output != null and output.id == node.id: output = null
+	nodes.erase(node.id)
+	node.delete()

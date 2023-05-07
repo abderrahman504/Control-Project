@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lpimp442wt73UWU3uJv/DRIjDSmTwj5XxO+W0wa/wx/nITZDpbw+FFIricn8DvLR2y6t73P1srOsWdbLNz757Q==",
+  "dgSpecHash": "2rU9xu5EHBCuMb4lRT0PcRmMQv/SV5Xuz3y+VSswN4b7KA4D9QpjLCN5SJmB2UvB8vTwsCLhwPyn7NLpeFAfmg==",
   "success": true,
-  "projectFilePath": "D:\\Freelancer\\Projects\\Current\\Control-Project\\Control Project.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Ideapad 5\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
-    "C:\\Users\\Ideapad 5\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\My files\\Uni Assignments\\CSE Year 2 term 2\\Control\\Control Project\\Control Project.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

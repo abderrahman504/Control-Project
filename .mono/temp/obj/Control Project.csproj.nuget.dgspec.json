@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Freelancer\\Projects\\Current\\Control-Project\\Control Project.csproj": {}
+    "C:\\My files\\Uni Assignments\\CSE Year 2 term 2\\Control\\Control Project\\Control Project.csproj": {}
   },
   "projects": {
-    "D:\\Freelancer\\Projects\\Current\\Control-Project\\Control Project.csproj": {
+    "C:\\My files\\Uni Assignments\\CSE Year 2 term 2\\Control\\Control Project\\Control Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Freelancer\\Projects\\Current\\Control-Project\\Control Project.csproj",
+        "projectUniqueName": "C:\\My files\\Uni Assignments\\CSE Year 2 term 2\\Control\\Control Project\\Control Project.csproj",
         "projectName": "Control Project",
-        "projectPath": "D:\\Freelancer\\Projects\\Current\\Control-Project\\Control Project.csproj",
-        "packagesPath": "C:\\Users\\Ideapad 5\\.nuget\\packages\\",
-        "outputPath": "D:\\Freelancer\\Projects\\Current\\Control-Project\\.mono\\temp\\obj\\",
+        "projectPath": "C:\\My files\\Uni Assignments\\CSE Year 2 term 2\\Control\\Control Project\\Control Project.csproj",
+        "packagesPath": "C:\\Users\\Abdelrahman\\.nuget\\packages\\",
+        "outputPath": "C:\\My files\\Uni Assignments\\CSE Year 2 term 2\\Control\\Control Project\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ideapad 5\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Abdelrahman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net472"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,15 +39,7 @@
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
-          "dependencies": {
-            "Microsoft.NETFramework.ReferenceAssemblies": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.3, )",
-              "autoReferenced": true
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

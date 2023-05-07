@@ -1,7 +1,6 @@
 extends TextureRect
 class_name VarNode
 signal clicked
-signal deleted
 
 var id: int
 onready var label: Label = $Label
@@ -28,7 +27,6 @@ func delete():
 	for edge in outputs.values():
 		edge.delete()
 	queue_free()
-	emit_signal("deleted", id)
 
 
 func _on_TextureRect_mouse_entered():

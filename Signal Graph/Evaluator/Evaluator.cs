@@ -104,8 +104,8 @@ public class Evaluator : Reference
 	}
 	
 	
-	public int getPathGain(Godot.Collections.Dictionary graphDict, List<string> path){
-		int PathGain = 1;
+	public double getPathGain(Godot.Collections.Dictionary graphDict, List<string> path){
+		double PathGain = 1;
 		
 		for (int i=0; i<path.Count-1; i++){
 			string from_node = path[i];
@@ -121,7 +121,7 @@ public class Evaluator : Reference
 	
 	public double Mason(Godot.Collections.Dictionary graphDict, List<List<string>> paths, List<List<string>> loops, WindowDialog solWindow){
 		int K = paths.Count;
-		int sum = 0; // Σk (Tk . Δk)
+		double sum = 0; // Σk (Tk . Δk)
 
 		string SolutionText = "";
 		int index = 0;
@@ -149,8 +149,8 @@ public class Evaluator : Reference
 		SolutionText += "\n";
 		
 		for (int i=0; i<K; i++){
-			int T = getPathGain(graphDict, paths[i]);
-			int NonTouchingLoops_TotalGain = 0;
+			double T = getPathGain(graphDict, paths[i]);
+			double NonTouchingLoops_TotalGain = 0;
 			foreach (List<string> loop in loops){
 				if (!isTouchingLoop(paths[i], loop)) {
 					NonTouchingLoops_TotalGain += getPathGain(graphDict, loop);
@@ -162,17 +162,17 @@ public class Evaluator : Reference
 		}
 		SolutionText += "\n";
 		
-		int Loops_TotalGain = 0;
+		double Loops_TotalGain = 0;
 		foreach (List<string> loop in loops){
 			Loops_TotalGain += getPathGain(graphDict, loop);
 		}
 		
-		int delta = 1 - Loops_TotalGain;
+		double delta = 1 - Loops_TotalGain;
 		int sign = 1;
 		
 		for (int i=2; i<=loops.Count; i++){
 			string NonTouchingLoops = "";
-			int TotalGain = 0;
+			double TotalGain = 0;
 			int TotalLoops = 0;
 			index = 0;
 			for (int j=0; j<loops.Count; j++){
